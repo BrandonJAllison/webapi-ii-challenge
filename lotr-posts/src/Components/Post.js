@@ -14,7 +14,6 @@ const Post = props => {
   return (
     <div style={post}>
       <h3 style={items}>{props.title}</h3>
-      <p style={items}>- {props.contents}</p>
       <span  onClick={() => props.deletePost(props.id)}> <i className="fas fa-dungeon"></i></span>
     </div>
   );

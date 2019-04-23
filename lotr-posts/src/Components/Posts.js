@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Post from './Post';
+import './Components.css'
+
 const heading ={
   textAlign: 'center'
 }
@@ -28,7 +30,7 @@ class Posts extends Component {
 
   render() {
     return (
-      <div className="Smurfs">
+      <div className="box">
 
          <p style={icon}><i className="fas fa-ring fa-5x fa-spin"></i></p>
          <p style={heading}>----- One Ring to Rule Them All -----</p>
