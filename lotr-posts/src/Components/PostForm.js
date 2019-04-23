@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Components.css'
 
 
 const form ={
@@ -20,7 +21,7 @@ const button ={
   padding: '10px',
   color: '#E1490F',
   borderRadius: '15px',
-  border: '1px solid #E1490F',
+ border: 'none',
   background: 'white',
   margin: '20px 0',
   boxShadow: '0px 8px 15px black'
@@ -55,8 +56,8 @@ class PostForm extends Component {
 
   render() {
     return (
-      <div style={form}>
-        <p>Add a new Post.</p>
+      <div className="box">
+        <p>Add your favorite Lord of The Rings Quote....</p>
         <div>
         <form style={form} onSubmit={this.addPost}>
           <input
@@ -76,7 +77,7 @@ class PostForm extends Component {
             required='required'
             name="contents"
           />
-          <button style={button} type="submit">Add Post</button>
+          <button style={button} type="submit"><i class="fas fa-hat-wizard"></i>Submit</button>
         </form>
         </div>
       </div>
