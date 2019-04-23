@@ -4,6 +4,26 @@ const router = express.Router();
 
 const db = require('../data/db');
 
+//Add new posts using router
+router.post('/', (req, res) => {
+    const newPost = req.body;
+    if (newPost.title && newPost.contents) {
+        db.insert(newPost)
+            .then(postIdObj => {
+                db.findById(postIdObj.id)
+                    .then(post => {
+                        res.status(201).json(post);
+                    });
+            })
+            .catch(err => {
+                res.status(500).json({ error: "There was an error while saving the post to the database." });
+            });
+
+    } else {
+        res.status(400).json({ errorMessage: "Please provide title and contents for the post." });
+    }
+});
+
 //Get all posts that begin with /api/posts
 router.get('/', (req, res) => {
     db.find()
@@ -28,6 +48,7 @@ router.get('/:id', (req, res) => {
         res.status(500).json({ error: "The post information could not be retrieved." });
     });
 });
+
 
 
 module.exports = router;
