@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const smurf ={
+const post ={
   display: 'flex',
   justifyContent:'center',
   alignItems:'center'
@@ -12,10 +12,10 @@ margin: '15px'
 }
 const Post = props => {
   return (
-    <div style={smurf}>
+    <div style={post}>
       <h3 style={items}>{props.title}</h3>
-      <p style={items}>{props.contents}</p>
-      <span className="far fa-trash-alt delete-btn" onClick={() => props.deletePost(props.id)}></span>
+      <p style={items}>- {props.contents}</p>
+      <span  onClick={() => props.deletePost(props.id)}> <i className="fas fa-dungeon"></i></span>
     </div>
   );
 };

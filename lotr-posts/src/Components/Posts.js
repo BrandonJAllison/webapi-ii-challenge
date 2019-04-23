@@ -31,7 +31,7 @@ class Posts extends Component {
       <div className="Smurfs">
 
          <p style={icon}><i className="fas fa-ring fa-5x fa-spin"></i></p>
-         <p style={heading}>-----</p>
+         <p style={heading}>----- One Ring to Rule Them All -----</p>
         <p style={headertwo}>Posts</p>
         <ul style={header}>
           {this.props.posts.map(posts => {
