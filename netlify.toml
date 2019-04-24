@@ -1,0 +1,14 @@
+
+[Settings]
+ID = "1523952a-7532-4a4b-a218-0408521dc646"
+
+# Settings in the [build] context are global and are applied to all contexts unless otherwise overridden by more specific contexts.  
+
+[build]
+  # This is the directory to change to before starting a build.
+  base    = "lotr-posts/"
+  # NOTE: This is where we will look for package.json/.nvmrc/etc, not root.
+  # This is the directory that you are publishing from (relative to root of your repo)
+  publish = "lotr-posts/build/"
+  # This will be your default build command
+  command = "yarn build"
