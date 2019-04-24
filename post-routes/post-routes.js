@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
             .then(postIdObj => {
                 db.find()
             .then(posts => {
-            res.json(posts);
+            res.status(200).json(posts);
                         })
             })
             .catch(err => {
@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
     db.find()
         .then(posts => {
-            res.json(posts);
+            res.status(200).json(posts);
         })
         .catch(err => {
             res.status(500).json({ error: "The posts information could not be retrieved." });
@@ -84,7 +84,7 @@ router.delete('/:id', (req, res) => {
                 if (countDeleted) {
                     db.find()
                     .then(posts => {
-                        res.json(posts);
+                        res.status(200).json(posts);
                     })
                 } else {
                     res.status(404).json({ message: "The post with the specified ID does not exist." });
@@ -93,8 +93,6 @@ router.delete('/:id', (req, res) => {
             .catch(err => {
                 res.status(500).json({ error: "The post could not be removed" });
             })
-    }).catch(err => {
-        res.status(500).json({ error: "The post information could not be retrieved." });
     })
 });
 
